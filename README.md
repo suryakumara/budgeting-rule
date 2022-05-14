@@ -17,5 +17,5 @@ npm run dev
 - [x] Next JS
 - [x] TailwindCss
 - [x] Firebase
-- [x] React Form Hooks
+- [x] React Hook Form
 - [x] React Query
