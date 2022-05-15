@@ -9,7 +9,7 @@ const Input = styled("input")`
   border-radius: 10px;
 `;
 
-const Login = () => {
+const Register = () => {
   return (
     <>
       <div className="flex justify-center mt-[200px]">
@@ -19,6 +19,8 @@ const Login = () => {
               <div className="py-2">Username</div>
               <Input />
               <div className="py-2">Password</div>
+              <Input />
+              <div className="py-2">Confirm Password</div>
               <Input />
             </div>
             <div className="py-14">
@@ -31,4 +33,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
