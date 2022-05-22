@@ -4,6 +4,7 @@ import ChartComponent from "../components/ChartComponent";
 import FormInputSalary from "../components/FormInputSalary";
 import useAuthContext from "../hooks/useAuthContext";
 import styles from "../styles/Home.module.css";
+import { withAuth } from "../utils/auth";
 
 const Container = styled.div`
   display: grid;
@@ -27,7 +28,7 @@ const ContainerChart = styled.div`
   width: 30rem;
 `;
 
-export default function Home() {
+const Home = () => {
   const { user } = useAuthContext();
   console.log(user);
   return (
@@ -52,4 +53,6 @@ export default function Home() {
       </main>
     </div>
   );
-}
+};
+
+export default withAuth(Home);
