@@ -23,8 +23,10 @@ const Register = () => {
   const handleRegister = () => {
     if (!errorMessage) {
       signUp(email, password);
+      router.push("/");
     }
   };
+  
   const handleConfirm = () => {
     if (password !== consfirmPassword) {
       setErrorMessage("Password not match");

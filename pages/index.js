@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useState } from "react";
 import styled from "styled-components";
 import ChartComponent from "../components/ChartComponent";
 import FormInputSalary from "../components/FormInputSalary";
@@ -29,7 +30,9 @@ const ContainerChart = styled.div`
 
 export default function Home() {
   const { user } = useAuthContext();
-  console.log(user);
+
+  const [calculatedResult, setCalculatedResult] = useState({ fifty: 0, thirty: 0, twenty: 0 });
+
   return (
     <div className={styles.container}>
       <Head>
@@ -43,10 +46,10 @@ export default function Home() {
       <main className={styles.main}>
         <Container>
           <ContainerForm>
-            <FormInputSalary />
+            <FormInputSalary onChange={(data) => setCalculatedResult(data)} />
           </ContainerForm>
           <ContainerChart>
-            <ChartComponent />
+            <ChartComponent data={calculatedResult} />
           </ContainerChart>
         </Container>
       </main>
