@@ -1,10 +1,13 @@
 import Head from "next/head";
+import { useState } from "react";
 import styled from "styled-components";
 import ChartComponent from "../components/ChartComponent";
 import FormInputSalary from "../components/FormInputSalary";
 import useAuthContext from "../hooks/useAuthContext";
 import styles from "../styles/Home.module.css";
-import { withAuth } from "../utils/auth";
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
+import Sliders from "../components/Sliders";
 
 const Container = styled.div`
   display: grid;
@@ -30,7 +33,9 @@ const ContainerChart = styled.div`
 
 const Home = () => {
   const { user } = useAuthContext();
-  console.log(user);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -50,9 +55,22 @@ const Home = () => {
             <ChartComponent />
           </ContainerChart>
         </Container>
+        <div>
+          <button onClick={() => setIsModalOpen(true)}>Click Modal</button>
+        </div>
       </main>
+
+      <Modal
+        open={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        style={{ width: 400, textAlign: "center" }}
+      >
+        <div className="w-full my-5">
+          <Sliders />
+        </div>
+      </Modal>
     </div>
   );
 };
 
-export default withAuth(Home);
+export default Home;
