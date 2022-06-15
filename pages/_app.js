@@ -4,7 +4,9 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <AuthContextProvider>
-      <Component {...pageProps} />
+      <div className="bg-note-100">
+        <Component {...pageProps} />
+      </div>
     </AuthContextProvider>
   );
 }

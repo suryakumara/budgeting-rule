@@ -1,23 +1,16 @@
-import { addDoc, collection } from "firebase/firestore";
-import React, { useState } from "react";
-import { db } from "../firebase/config";
-import useAuthContext from "../hooks/useAuthContext";
-import Loading from "./Loading";
+import { useState } from "react";
 import { calculateBuget } from "../utils/getCalculateBudget";
 
 const FormInputSalary = ({ onChange }) => {
   const [salary, setSalary] = useState("");
 
   const handleCalculate = async () => {
-    // const ref = collection(db, "data-user");
-    // await addDoc(ref, { salary: salary, uid: "" });
-
     const { fiftyPercent, twentyPercent, thirtyPercent } = calculateBuget(salary);
     onChange({ fifty: fiftyPercent, twenty: twentyPercent, thirty: thirtyPercent });
   };
 
   return (
-    <div className="w-full max-w-xs">
+    <div className="m-auto sm:w-80 ">
       <form className="bg-white  px-8 pt-6 pb-8 mb-4  shadow-lg h-52 rounded">
         <div className="mb-4">
           <label className="block text-gray-700 text-lg mb-2" htmlFor="salary">
