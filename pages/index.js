@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import ChartComponent from "../components/ChartComponent";
 import FormInputSalary from "../components/FormInputSalary";
@@ -8,6 +8,7 @@ import styles from "../styles/Home.module.css";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import Sliders from "../components/Sliders";
+import { useRouter } from "next/router";
 
 const Container = styled.div`
   display: grid;

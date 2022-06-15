@@ -32,7 +32,10 @@ const Login = () => {
               <div className="py-2">Email</div>
               <Input type="text" onChange={(e) => setEmail(e.target.value)} />
               <div className="py-2">Password</div>
-              <Input type="password" onChange={(e) => setPassword(e.target.value)} />
+              <Input
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
               {error && <p className="text-red-500 mt-2">{error}</p>}
               <div className="mt-5">
                 <button
