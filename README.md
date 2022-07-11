@@ -3,7 +3,7 @@
 1. Installation :
 
 ```sh
-npm intsll
+npm install
 ```
 
 2. Running App :
